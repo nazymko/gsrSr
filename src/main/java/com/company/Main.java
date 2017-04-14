@@ -48,7 +48,7 @@ public class Main {
         String json = new Gson().toJson(test);
 
 
-        new DefaultSender().send(json);
+        new DefaultSender().send(json, false);
 
 
     }

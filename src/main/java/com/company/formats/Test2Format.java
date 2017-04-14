@@ -43,7 +43,6 @@ public class Test2Format implements FormatReader {
     public Test read(String content, String testName) {
         content = removeEmptyLines(content);
 
-        System.out.println(content);
 
         String[] split = content.split("\n");
         Test test = new Test(testName, testName);
@@ -69,9 +68,13 @@ public class Test2Format implements FormatReader {
                     if (line.startsWith(".")) {
                         line = line.substring(1);
                     }
+                    System.out.println(line);
                     question.getAnswers().put(line, isCorrect);
                 }
             } else {
+                System.out.println();
+                System.out.println(line);
+
                 question = new Test.Question(line.trim());
                 test.getQuestions().add(question);
             }

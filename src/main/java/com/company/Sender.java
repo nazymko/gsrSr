@@ -16,7 +16,7 @@ import java.io.InputStream;
 public class Sender {
 
     public static void main(String[] args) throws IOException {
-        send("Тести №17  Травми сечостатевих органів (укр).txt","Тести №17  Травми сечостатевих органів (укр)");
+        send("Тести №16 Ниркова недостатність (укр).txt","Тести №16 Ниркова недостатність (укр)");
     }
 
     private static void send(String fileName, String s) throws IOException {
@@ -29,6 +29,7 @@ public class Sender {
         String toJson = new Gson().toJson(test);
 
         System.out.println("toJson = " + toJson);
-        new DefaultSender().send(toJson);
+
+        new DefaultSender().send(toJson,false);
     }
 }
