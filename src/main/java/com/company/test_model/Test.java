@@ -35,6 +35,10 @@ public class Test {
         public Map<String, Boolean> getAnswers() {
             return answers.get(0);
         }
+
+        public String getQuestion() {
+            return question;
+        }
     }
 
 }

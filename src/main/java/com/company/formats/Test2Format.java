@@ -36,8 +36,18 @@ public class Test2Format implements FormatReader {
             "8.",
             "7.",
             ">",
-            "9."
-            );
+            "9.",
+            "A.",
+            "B.",
+            "C.",
+            "D.",
+            "E.",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+    );
 
     @Override
     public Test read(String content, String testName) {
@@ -85,7 +95,13 @@ public class Test2Format implements FormatReader {
     }
 
     private String removeMark(String s) {
-        return s.substring(2).trim();
+        for (String marker : markers) {
+            if ((s.trim().startsWith(marker))) {
+                return s.trim().replace(marker, "");
+            }
+        }
+
+        return s;
     }
 
     private boolean isAnswer(String s) {
